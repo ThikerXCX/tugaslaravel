@@ -29,5 +29,5 @@ Route::get('/about', function () {
         ]
     );
 });
-Route::get('/news', [BeritaController::class, 'index']);
+Route::get('/news', [BeritaController::class, 'index'])->name('news');
 Route::get('/news/newsPost:slug', [BeritaController::class, 'show']);
