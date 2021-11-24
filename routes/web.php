@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth/login');
 });
+Route::get('/registrasi', function () {
+    return view('auth/registrasi')->name('auth.registrasi');
+});
 Route::get('/about', function () {
     return view(
         'about',
