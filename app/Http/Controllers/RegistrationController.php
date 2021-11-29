@@ -16,7 +16,7 @@ class RegistrationController extends Controller
     {
         request()->validate([
             'name' => ['required', 'string', 'min:3'],
-            'username' => ['required', 'string', 'min:3', 'unique:user'],
+            'username' => ['required', 'string', 'min:3',],
             'email' => ['required', 'email'],
             'password' => ['required', 'min:3']
         ]);
