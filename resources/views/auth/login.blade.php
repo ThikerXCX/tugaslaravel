@@ -35,7 +35,7 @@
                         <input type="password" class="input">
                     </div>
                 </div>
-                <a href="/registrasi">Registrasi !</a>
+                <a href="#">Registrasi !</a>
                 <input type="submit" class="btn" value="Login">
             </form>
         </div>

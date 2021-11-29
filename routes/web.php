@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +21,9 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth/login');
 });
-Route::get('/registrasi', function () {
-    return view('auth/registrasi')->name('auth.registrasi');
-});
+Route::get('register', [RegistrationController::class, 'create'])->name('register');
+Route::post('register', [RegistrationController::class, 'store'])->name('register');
+
 Route::get('/about', function () {
     return view(
         'about',
