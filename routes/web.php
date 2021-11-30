@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,11 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/login', function () {
-    return view('auth/login');
-});
+Route::get('login', [LoginController::class, 'create'])->name('login');
+Route::post('login', [LoginController::class, 'store'])->name('login');
 Route::get('register', [RegistrationController::class, 'create'])->name('register');
-Route::post('register', [RegistrationController::class, 'store'])->name('register');
+Route::post('register', [RegistrationController::class, 'store']); // bisa tetap pake route karena pad form menggunakan method post
 
 Route::get('/about', function () {
     return view(
