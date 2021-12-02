@@ -24,12 +24,10 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <h5>Username</h5>
-                        <input type="text" name="username" class="input">
-                        @error('username')
-                            <div class="text-danger mt-2">
-                                {{ $message }}
-                            </div>
+                        <h5>Email</h5>
+                        <input type="text" name="email" class="input" value="{{ old('email') }}">
+                        @error('email')
+                        <script>alert('{{ $message }}')</script>
                         @enderror
                     </div>
                 </div>
@@ -39,8 +37,8 @@
                     </div>
                     <div class="div">
                         <h5>Password</h5>
-                        <input type="password" name="password" class="input">
-                        @error('username')
+                        <input type="password" name="password" class="input" value="{{ old('passwordddddddd') }}">
+                        @error('password')
                             <div class="text-danger mt-2">
                                 {{ $message }}
                             </div>
@@ -48,7 +46,7 @@
                     </div>
                 </div>
                 <a href="{{ route('register') }}"  class="nav-link" >Registrasi !</a>
-                <input type="submit" class="btn" value="Login">
+                <button type="submit" class="btn">login</button>
             </form>
         </div>
     </div>
