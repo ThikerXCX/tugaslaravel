@@ -28,7 +28,6 @@ class navbar extends Component
             'About' => '/about',
             'News' => '/news'
         ];
-
         return view('layout.navbar', compact('navbars'));
     }
 }
