@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
@@ -39,5 +40,8 @@ Route::middleware('guest')->group(function(){
     Route::get('register', [RegistrationController::class, 'create'])->name('register');//bisa menggunakan->middleware('guest') setelah nama
     Route::post('register', [RegistrationController::class, 'store']); // bisa tetap pake route karena pad form menggunakan method post
 });
+Route::middleware('auth')->group(function(){
+    Route::post('logout',LogoutController::class)->name('logout');
+    Route::get('dashboard',[DashboardController::class,'create'])->name('dashboard');
+});
 
-Route::post('logout',LogoutController::class)->middleware('auth')->name('logout');
