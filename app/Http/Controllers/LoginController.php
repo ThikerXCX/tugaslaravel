@@ -20,7 +20,7 @@ class LoginController extends Controller
             'password' => ['required'], // validasi bisa pakai request jika ingin atau jika ada user yang bisa menmbabahkan user lain
         ]);
         if (Auth::attempt($attributes)) {
-            return redirect('/')->with('success', 'anda sudah login');
+            return redirect('/dashboard')->with('success', 'anda sudah login');
         }
         throw ValidationException::withMessages([
             'email' => 'data yang anda masukan tidak tepat'

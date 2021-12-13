@@ -45,9 +45,6 @@
                         aria-labelledby="navbarDropdown"
                     >
                         <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dasboard</a></li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another action</a>
-                        </li>
                         <li><hr class="dropdown-divider" /></li>
                         <li>
                             <form action="{{ route('logout') }}" method="post">
