@@ -11,4 +11,8 @@ class PostController extends Controller
         $berita = Berita::all();
         return view('dashboard.berita.index',compact('berita'));
     }
+    public function show(Berita $berita)
+    {
+        return view('dashboard.berita.detail',compact('berita'));
+    }
 }

@@ -45,5 +45,6 @@ Route::middleware('auth')->group(function(){
     Route::post('logout',LogoutController::class)->name('logout');
     Route::get('dashboard',[DashboardController::class,'create'])->name('dashboard');
     Route::get('berita',[PostController::class,'create'])->name('berita');
+    Route::get('berita/{berita:slug}',[PostController::class,'show']);
 });
 

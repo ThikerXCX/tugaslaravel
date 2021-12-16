@@ -23,6 +23,6 @@ class mainDashboard extends Component
      */
     public function render()
     {
-        return view('layout.main-dashboard');
+        return view('layout.mainDashboard');
     }
 }

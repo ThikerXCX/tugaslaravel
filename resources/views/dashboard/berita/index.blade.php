@@ -28,8 +28,8 @@
                             <td>{{ $i->category->name }}</td>
                             <td>
                                 <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-eye nav-icon"></i></a>
-                                <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-edit nav-icon"></i></a>
-                                <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="fas fa-trash nav-icon"></i></a>
+                                <a href="/berita/{{ $i->id }}/edit" class="btn btn-info"><i class="far fa-edit nav-icon"></i></a>
+                                <a href="/berita/{{ $i->id }}/destroy" class="btn btn-info"><i class="fas fa-trash nav-icon"></i></a>
                             </td>
                         </tr>
                     @endforeach
