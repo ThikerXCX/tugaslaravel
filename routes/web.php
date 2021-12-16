@@ -32,7 +32,7 @@ Route::get('/about', function () {
     );
 });
 Route::get('/news', [BeritaController::class, 'index'])->name('news');
-Route::get('/news/newsPost:slug', [BeritaController::class, 'show']);
+Route::get('/news/{berita:slug}', [BeritaController::class, 'show']);
 
 Route::middleware('guest')->group(function(){
     Route::get('login', [LoginController::class, 'create'])->name('login')->middleware('guest');

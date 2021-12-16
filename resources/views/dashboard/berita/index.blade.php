@@ -1,4 +1,4 @@
-<x-mainDashboard>
+<x-mainDashboard title="Berita">
     <div class="content-wrapper">
         <div class="content-header">
             <div class="container-fluid">
@@ -23,9 +23,14 @@
                 <tbody>
                     @foreach($berita as $i)
                         <tr>
-                            <td>{{ $loop->iteraation }}</td>
+                            <td>{{ $loop->iteration }}</td>
                             <td>{{ $i->judul_berita }}</td>
                             <td>{{ $i->category->name }}</td>
+                            <td>
+                                <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-eye nav-icon"></i></a>
+                                <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-edit nav-icon"></i></a>
+                                <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="fas fa-trash nav-icon"></i></a>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
