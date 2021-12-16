@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>AdminLTE 3 | Pages</title>
+        <title>{{ $title }} | Pages</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
@@ -74,22 +74,7 @@
                     <!-- /.sidebar-menu -->
                 </div>
             </aside>
-
-            <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
-                <!-- Content Header (Page header) -->
-                <section class="content-header">
-                    <div class="container-fluid">
-                        <div class="row mb-2">
-                            <div class="col-sm-6">
-                                <h1>Dashboard</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.container-fluid -->
-                </section>
-        <!-- ./wrapper -->
-
+            {{ $slot }}
         <!-- jQuery -->
         <script src="../../plugins/jquery/jquery.min.js"></script>
         <!-- Bootstrap 4 -->

@@ -4,6 +4,7 @@ use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,5 +44,6 @@ Route::middleware('guest')->group(function(){
 Route::middleware('auth')->group(function(){
     Route::post('logout',LogoutController::class)->name('logout');
     Route::get('dashboard',[DashboardController::class,'create'])->name('dashboard');
+    Route::get('berita',[PostController::class,'create'])->name('berita');
 });
 
