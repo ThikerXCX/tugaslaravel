@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Berita extends Model
 {
-    use HasFactory; //,Sluggable;
+    use HasFactory;//,Sluggable;
     protected $guarded = ['id'];
     public function category()
     {
