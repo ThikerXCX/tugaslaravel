@@ -3,7 +3,7 @@
         <div class="card-header">
             <h3 class="card-title">tambah</h3>
         </div>
-        <form action="" method="post">
+        <form action="{{ route('berita.store') }}" method="post">
             @csrf
             <div class="card-body">
                 <div class="form-group">

@@ -24,7 +24,7 @@ class PostController extends Controller
     }
     public function store(BeritaRequest $request)
     {
-        
+        dd($request->all());
     }
     public function checkSlug(Request $request)
     {

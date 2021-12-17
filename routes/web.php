@@ -44,10 +44,12 @@ Route::middleware('guest')->group(function(){
 Route::middleware('auth')->group(function(){
     Route::post('logout',LogoutController::class)->name('logout');
     Route::get('dashboard',[DashboardController::class,'create'])->name('dashboard');
+
     Route::get('berita',[PostController::class,'index'])->name('berita');
     Route::get('berita/create',[PostController::class,'create'])->name('berita.create');
-    Route::get('berita/create/check',[PostController::class,'checkSlug'])->name('berita.check');
-    Route::post('berita/create',[PostController::class,'store'])->name('berita.create');
+    Route::post('berita/create',[PostController::class,'store'])->name('berita.store');
     Route::get('berita/{berita:slug}',[PostController::class,'show']);
+    Route::get('berita/create/check',[PostController::class,'checkSlug'])->name('berita.check');
+
 });
 

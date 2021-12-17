@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Requests\BeritaRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
@@ -24,9 +25,9 @@ class Berita extends Model
         ];
     }
     /*
-    public function setExcerptAttribute($isiberita)
+    public function setExcerptAttribute(BeritaRequest $request)
     {
-        $this->attributes['excerpt'] = Str::limit(strip_tags($request->isiberita),100);
+        $this->attributes['excerpt'] = Str::limit($request->judul,100, '...');
     }
     */
 }
