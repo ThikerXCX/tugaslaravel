@@ -4,7 +4,8 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{{ $title }} | Pages</title>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.min.css">
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"/>
         <!-- Font Awesome -->
@@ -62,7 +63,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ 'berita' }}" class="nav-link">
+                                <a href="{{ route('berita') }}" class="nav-link">
                                     <i class="nav-icon fab fa-buffer"></i>
                                     <p>
                                         Berita
@@ -84,5 +85,6 @@
         <!-- AdminLTE App -->
         <script src="/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
+        <script src="/plugins/summernote/summernote-bs4.min.js"></script>
     </body>
 </html>

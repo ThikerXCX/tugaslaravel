@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="card-body">
-            <a href="#" class="btn btn-primary mb-2">Tambah Berita</a>
+            <a href="{{ route('berita.create') }}" class="btn btn-primary mb-2">Tambah Berita</a>
             <table id="example" class="table table-bordered table-hover">
                 <thead>
                     <tr>
