@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Http\Request;
 
 class Berita extends Model
 {
-    use HasFactory;//,Sluggable;
+    use HasFactory,Sluggable;
     protected $guarded = ['id'];
     public function category()
     {
@@ -22,4 +23,10 @@ class Berita extends Model
             ]
         ];
     }
+    /*
+    public function setExcerptAttribute($isiberita)
+    {
+        $this->attributes['excerpt'] = Str::limit(strip_tags($request->isiberita),100);
+    }
+    */
 }

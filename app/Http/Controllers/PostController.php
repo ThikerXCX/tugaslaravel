@@ -28,6 +28,7 @@ class PostController extends Controller
     }
     public function checkSlug(Request $request)
     {
-        // $slug = SlugService::createSlug(Berita::class,'slug',$request->judul);
+        $slug = SlugService::createSlug(Berita::class,'slug',$request->judul);
+        return response()->json(['slug'=>$slug]);
     }
 }
