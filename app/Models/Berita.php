@@ -25,9 +25,9 @@ class Berita extends Model
         ];
     }
     /*
-    public function setExcerptAttribute(BeritaRequest $request)
+    public function addExcerptAttribute(BeritaRequest $request)
     {
-        $this->attributes['excerpt'] = Str::limit($request->judul,100, '...');
+        $this->attributes['excerpt'] = Str::limit($request->isiberita,100, '...');
     }
     */
 }
