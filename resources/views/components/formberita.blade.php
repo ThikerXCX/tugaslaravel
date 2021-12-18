@@ -7,9 +7,9 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label for="judul">Judul berita</label>
-                    <input type="text" name="judul" id="judul" placeholder="Judul berita" class="form-control">
-                    @error('judul')
+                    <label for="judul_berita">Judul berita</label>
+                    <input type="text" name="judul_berita" id="judul_berita" placeholder="Judul berita" class="form-control">
+                    @error('judul_berita')
                         <div class="text-danger mt-2">
                             {{ $message }}
                         </div>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label for="slug">Slug</label>
-                    <input type="text" disabled name="slug" id="slug" placeholder="slug" class="form-control">
+                    <input type="text" readonly name="slug" id="slug" placeholder="slug" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="category_id">Category</label>
@@ -35,7 +35,7 @@
                         {{ $message }}
                     </div>
                     @enderror
-                    <textarea name="isiberita" id="summernote"></textarea>
+                    <textarea name="isi_berita" id="summernote"></textarea>
                 </div>
             </div>
             <div class="card-footer">

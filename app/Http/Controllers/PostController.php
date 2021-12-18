@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BeritaRequest;
 use App\Models\Berita;
-use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -23,12 +24,20 @@ class PostController extends Controller
         return view('dashboard.berita.detail',compact('berita'));
     }
     public function store(BeritaRequest $request)
-    {
-        dd($request->all());
+    {   
+        $attr = $request->all();
+        $attr['excerpt'] =  Str::limit(strip_tags($request->isi_berita,100));
+        Berita::create($attr);
+        return redirect('/berita')->with('success', 'data berhasil dimasukan');
+    }
+    public function destroy($id)
+    {   
+        DB::table('beritas')->where('id','=',$id)->delete();
+        return back();
     }
     public function checkSlug(Request $request)
     {
-        $slug = SlugService::createSlug(Berita::class,'slug',$request->judul);
+        $slug = SlugService::createSlug(Berita::class,'slug',$request->judul_berita);
         return response()->json(['slug'=>$slug]);
     }
 }

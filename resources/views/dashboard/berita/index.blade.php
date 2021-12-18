@@ -9,6 +9,11 @@
                 </div>
             </div>
         </div>
+        @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         <div class="card-body">
             <a href="{{ route('berita.create') }}" class="btn btn-primary mb-2">Tambah Berita</a>
             <table id="example" class="table table-bordered table-hover">
@@ -29,7 +34,11 @@
                             <td>
                                 <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-eye nav-icon"></i></a>
                                 <a href="/berita/{{ $i->id }}/edit" class="btn btn-info"><i class="far fa-edit nav-icon"></i></a>
-                                <a href="/berita/{{ $i->id }}/destroy" class="btn btn-info"><i class="fas fa-trash nav-icon"></i></a>
+                                <form action="{{ route('berita.destroy',['id' => $i->id]) }}" method="post" class="d-inline">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-danger"><i class="fas fa-trash nav-icon"></i></button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

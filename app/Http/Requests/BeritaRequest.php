@@ -24,10 +24,10 @@ class BeritaRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => ['required','max:255'],
+            'judul_berita' => ['required','max:255'],
             'slug' => ['required','unique:beritas,slug'],
             'category_id' =>['required'],
-            'isiberita' => ['required']
+            'isi_berita' => ['required']
         ];
     }
 }
