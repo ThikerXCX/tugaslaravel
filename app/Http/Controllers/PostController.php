@@ -33,7 +33,7 @@ class PostController extends Controller
     public function destroy($id)
     {   
         DB::table('beritas')->where('id','=',$id)->delete();
-        return back();
+        return redirect('/berita')->with('success', 'data berhasil dihapus');;
     }
     public function checkSlug(Request $request)
     {

@@ -7,7 +7,11 @@
                     <div>{{ $berita->isi_berita }}</div>
                     <a href="{{ route('berita') }}" class="btn btn-success">Kembali ke berita utama</a>
                     <a href="/berita/{{ $berita->id }}/edit" class="btn btn-info"><i class="far fa-edit nav-icon"></i></a>
-                    <a href="/berita/{{ $berita->id }}/destroy" class="btn btn-info"><i class="fas fa-trash nav-icon"></i></a>
+                    <form action="{{ route('berita.destroy',['id' => $berita->id]) }}" method="post" class="d-inline">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash nav-icon"></i></button>
+                    </form>
                 </article>
             </div>
         </div>
