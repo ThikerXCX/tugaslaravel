@@ -86,5 +86,7 @@
         <script src="/dist/js/adminlte.min.js"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="/plugins/summernote/summernote-bs4.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
     </body>
 </html>
