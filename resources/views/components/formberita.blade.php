@@ -8,7 +8,7 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="judul_berita">Judul berita</label>
-                    <input type="text" name="judul_berita" id="judul_berita" placeholder="Judul berita" class="form-control">
+                    <input type="text" name="judul_berita" id="judul_berita" value="{{ $berita->judul_berita  ?? ''}}" placeholder="Judul berita" class="form-control">
                     @error('judul_berita')
                         <div class="text-danger mt-2">
                             {{ $message }}

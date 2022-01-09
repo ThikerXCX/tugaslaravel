@@ -40,4 +40,11 @@ class PostController extends Controller
         $slug = SlugService::createSlug(Berita::class,'slug',$request->judul_berita);
         return response()->json(['slug'=>$slug]);
     }
+
+    public function edit(Berita $berita)
+    {
+        echo view('dashboard.berita.edit');
+        return response()->json(['berita'=>$berita]);
+
+    }
 }

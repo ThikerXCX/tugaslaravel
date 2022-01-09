@@ -49,8 +49,10 @@ Route::middleware('auth')->group(function(){
     Route::get('berita/create',[PostController::class,'create'])->name('berita.create');
     Route::post('berita/create',[PostController::class,'store'])->name('berita.store');
     Route::get('berita/{berita:slug}',[PostController::class,'show']);
-    Route::get('Berita/{berita:slug}/edit',[PostController::class,'edit'])->name('berita.edit');
-    Route::put('Berita/{id}/edit',[PostController::class,'edit'])->name('berita.edit');
+
+    Route::get('berita/{berita:slug}/edit',[PostController::class,'edit'])->name('berita.edit');
+    Route::put('berita/{berita:slug}/edit',[PostController::class,'update']);
+
     Route::delete('berita/{id}/delete',[PostController::class,'destroy'])->name('berita.destroy');
     Route::get('berita/create/check',[PostController::class,'checkSlug'])->name('berita.check');
 

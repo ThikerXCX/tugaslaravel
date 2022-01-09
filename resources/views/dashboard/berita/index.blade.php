@@ -33,7 +33,7 @@
                             <td>{{ $i->category->name }}</td>
                             <td>
                                 <a href="/berita/{{ $i->slug }}" class="btn btn-info"><i class="far fa-eye nav-icon"></i></a>
-                                <a href="/berita/{{ $i->id }}/edit" class="btn btn-warning"><i class="far fa-edit nav-icon"></i></a>
+                                <a href="/berita/{{ $i->slug }}/edit" class="btn btn-warning"><i class="far fa-edit nav-icon"></i></a>
                                 <form action="{{ route('berita.destroy',['id' => $i->id]) }}" method="post" class="d-inline">
                                     @csrf
                                     @method('delete')
@@ -46,9 +46,11 @@
             </table>
         </div>
     </div>
+@slot('js')
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
     } );    
 </script>
+@endslot
 </x-mainDashboard>
