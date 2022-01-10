@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
@@ -56,5 +57,6 @@ Route::middleware('auth')->group(function(){
     Route::delete('berita/{id}/delete',[PostController::class,'destroy'])->name('berita.destroy');
     Route::get('berita/create/check',[PostController::class,'checkSlug'])->name('berita.check');
 
+    Route::get('/category',[CategoryController::class,'index'])->name('cat.index');
 });
 

@@ -25,7 +25,6 @@ class BeritaRequest extends FormRequest
     {
         return [
             'judul_berita' => ['required','max:255'],
-            'slug' => ['required','unique:beritas,slug'],
             'category_id' =>['required'],
             'isi_berita' => ['required']
         ];

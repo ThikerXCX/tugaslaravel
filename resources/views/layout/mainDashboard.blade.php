@@ -70,6 +70,14 @@
                                     </p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="/category" class="nav-link">
+                                    <i class="nav-icon fab fa-buffer"></i>
+                                    <p>
+                                        category
+                                    </p>
+                                </a>
+                            </li>
                         </ul>
                     </nav>
                     <!-- /.sidebar-menu -->

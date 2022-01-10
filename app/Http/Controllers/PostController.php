@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BeritaRequest;
 use App\Models\Berita;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
@@ -33,7 +34,7 @@ class PostController extends Controller
     public function destroy($id)
     {   
         DB::table('beritas')->where('id','=',$id)->delete();
-        return redirect('/berita')->with('success', 'data berhasil dihapus');;
+        return redirect('/berita')->with('success', 'data berhasil dihapus');
     }
     public function checkSlug(Request $request)
     {
@@ -43,8 +44,22 @@ class PostController extends Controller
 
     public function edit(Berita $berita)
     {
-        echo view('dashboard.berita.edit');
-        return response()->json(['berita'=>$berita]);
-
+        return view('dashboard.berita.edit',[
+            'berita' => $berita,
+            'category' => Category::all()
+        ]);
+    }
+    public function update(BeritaRequest $request,Berita $berita)
+    {
+        $attr = $request->all();
+        $attr['excerpt'] =  Str::limit(strip_tags($request->isi_berita,100));
+        Berita::where('id',$berita->id)->update([
+            'category_id' => $attr['category_id'],
+            'judul_berita' => $attr['judul_berita'],
+            'slug' => $attr['slug'],
+            'excerpt' => $attr['excerpt'],
+            'isi_berita' => $attr['isi_berita'],
+        ]);
+        return redirect('/berita')->with('success', 'data berhasil diupdate');
     }
 }
